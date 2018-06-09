@@ -4,6 +4,10 @@ export class Person {
     lastName : string;
     dateOfBirth : Date;
 
+    /*
+
+    // D/N: Commented this out because we don't really need this
+    
     // This method will return an accurate age based on the dateOfBirth
     getAge() : number {
 
@@ -25,4 +29,5 @@ export class Person {
         return age;
 
     }
+    */
 }
