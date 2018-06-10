@@ -1,3 +1,21 @@
 table, tr, th, td {
     border:1px solid #000;
 }
+
+#guest-search {
+    padding-top:2rem;
+}
+
+#guest-search label {
+    padding-right:1rem;
+    font-weight:bold;
+}
+
+.guest-search--name {
+    padding-bottom:0.5rem;
+}
+
+.search-result {
+    padding-top:1rem;
+    font-weight:bold;
+}

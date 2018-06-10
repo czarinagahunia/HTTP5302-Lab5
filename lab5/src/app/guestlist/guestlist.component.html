@@ -1,16 +1,33 @@
 <h1>Guests</h1>
 
 <div *ngIf="guests">
-  <table>
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Date of Birth</th>
-    </tr>
-    <tr *ngFor="let g of guests">
-      <td>{{ g.firstName }}</td>
-      <td>{{ g.lastName }}</td>
-      <td>{{ g.dateOfBirth.toDateString() }}</td>
-    </tr>
-  </table>
-</div>
+    <table>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Date of Birth</th>
+      </tr>
+      <tr *ngFor="let g of guests">
+        <td>{{ g.firstName }}</td>
+        <td>{{ g.lastName }}</td>
+        <td>{{ g.dateOfBirth.toDateString() }}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div id="guest-search">
+    <div class="guest-search--name">
+      <label>First name:</label>
+      <input [(ngModel)]="peopleSearch.firstName" />
+    </div>
+    <div class="guest-search--name">
+      <label>Last name:</label>
+      <input [(ngModel)]="peopleSearch.lastName" />
+    </div>
+    <button (click)="findPeople(peopleSearch)">Search</button>
+  </div>
+
+  <div class="search-result">
+    {{ peopleSearch.firstName }} {{ peopleSearch.lastName }}
+  </div>
+

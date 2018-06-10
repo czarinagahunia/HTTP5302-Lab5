@@ -12,19 +12,26 @@ export class GuestlistComponent implements OnInit {
 
   // Define 'guests' variable
   guests: Person[];
-  
+
   // Undefined Person array
   // guests : Person[] = [];
 
+  peopleSearch: Person = new Person();
+
+  findPeople() {
+    console.log("findPeople() clicked");
+    this.peopleService.getPeople().subscribe(data => this.guests = data);
+  }
 
   //  Declare a service inside a component 
   // using the component’s constructor.
   constructor(private peopleService: PeopleService){
   }
 
-  
   ngOnInit() {
-    this.peopleService.getPeople().subscribe(data => this.guests = data)
+    this.peopleService.getPeople().subscribe(data => this.guests = data);
+    //this.peopleSearch.firstName = "Czarina";
+    this.findPeople();
   }
 
 }
